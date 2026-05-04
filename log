@@ -51,3 +51,9 @@ treemap.c:66:23: error: ‘TreeMap’ has no member named ‘right’
    66 |         else aux = aux->right;
       |                       ^~
 26ba782
+Mon May  4 02:24:10 AM UTC 2026: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  11|6
+total_score: 15/60
+1c44649
