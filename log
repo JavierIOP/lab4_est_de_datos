@@ -69,3 +69,14 @@ Mon May  4 02:37:21 AM UTC 2026:
  tests:  15|4
 total_score: 25/60
 e15819b
+Mon May  4 02:56:16 AM UTC 2026: 
+ treemap.c | 31 ++++++++++++++++++++++++++++++-
+ 1 file changed, 30 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:129:16: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+  129 |             if(node->parent->left = node) node->parent->left = hijo;
+      |                ^~~~
+cc1: all warnings being treated as errors
+6861889
