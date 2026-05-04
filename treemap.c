@@ -156,10 +156,28 @@ void eraseTreeMap(TreeMap * tree, void* key){
 // Recuerde actualizar este puntero.
 
 Pair * firstTreeMap(TreeMap * tree) {
-    return NULL;
+    if(!tree || !tree->root) return NULL;
+    TreeNode* aux = tree->root;
+    while(aux->left) aux = aux->left;
+    tree->current = aux;
+    return aux->pair;
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
+    if(!tree || !tree->current) return NULL;
+    TreeNode* node = tree->current;
+    if(node->right){
+        node = minimum(node->right);
+        tree->current = node;
+        return node->pair;
+    }
+    TreeNode* parent = node->parent;
+    while(parent && node == parent->right){
+        node = parent;
+        parent = parent->parent;
+    }
+    tree->current = parent;
+    if(parent) return parent->pair;
     return NULL;
 }
 
